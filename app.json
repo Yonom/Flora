@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "flora-app",
+    "slug": "flora-app",
     "version": "1.0.0",
     "scheme": "com.yonom.flora",
     "orientation": "portrait",
@@ -12,16 +12,22 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yonom.app"
+      "bundleIdentifier": "com.yonom.flora"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.yonom.flora"
     },
     "web": {
       "bundler": "metro",
@@ -31,15 +37,29 @@
       [
         "react-native-vision-camera",
         {
-          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
+          "cameraPermissionText": "To scan food items, flora needs access to your camera"
         }
       ],
       [
         "expo-router",
         {
-          "origin": "https://starthack2024-backend.simonfarshid.com/"
+          "origin": "https://flora-backend.simonfarshid.com/"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": "https://flora-backend.simonfarshid.com/"
+      },
+      "eas": {
+        "projectId": "04be704b-9f8d-4167-8c2b-129291050047"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/04be704b-9f8d-4167-8c2b-129291050047"
+    }
   }
 }
