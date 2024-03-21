@@ -18,6 +18,9 @@ const prompt = `Output a JSON following this specification describing the image:
   "fat_grams": number,
   "protein_grams": number,
   "carbs_grams": number,
+
+  "rich_in_prebiotics": number, // 1 = low, 5 = high
+  "rich_in_probiotics": number // 1 = low, 5 = high
 }
 
 DO NOT INCLUDE ANY TEXT BESIDE THE JSON. DO NOT INCLUDE ANY COMMENTS.`;
