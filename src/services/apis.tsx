@@ -75,7 +75,5 @@ export const identifyApi = async (
         reject(e);
       }
     });
-
-    es.open();
   });
 };

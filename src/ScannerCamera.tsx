@@ -18,11 +18,15 @@ const ScannerCamera = () => {
   const ref = useRef<Camera>(null);
   const setBoundingBox = useBoundingBoxState((state) => state.setBoundingBox);
 
+  const hasScheduleRef = useRef(false);
   useFocusEffect(() => {
     let abortController = new AbortController();
     setBoundingBox(null);
     const scheduleLoop = () => {
+      if (hasScheduleRef.current) return;
+      hasScheduleRef.current = true;
       setTimeout(async () => {
+        hasScheduleRef.current = false;
         if (abortController.signal.aborted) return;
         try {
           await takePhotoAndDetectObjects(ref.current!, setBoundingBox);

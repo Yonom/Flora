@@ -1,7 +1,5 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI();
-
 const prompt = `Output a JSON following this specification describing the image:
 
 { 
@@ -25,6 +23,7 @@ DO NOT INCLUDE ANY TEXT BESIDE THE JSON. DO NOT INCLUDE ANY COMMENTS.`;
 
 export async function POST(request: Request) {
   const { image } = await request.json();
+  const openai = new OpenAI();
   return openai.chat.completions
     .create({
       model: "gpt-4-vision-preview",

@@ -12,22 +12,20 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yonom.flora"
+      "bundleIdentifier": "com.yonom.flora",
+      "runtimeVersion": "1.0.1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": [
-        "android.permission.CAMERA"
-      ],
-      "package": "com.yonom.flora"
+      "permissions": ["android.permission.CAMERA"],
+      "package": "com.yonom.flora",
+      "versionCode": 2
     },
     "web": {
       "bundler": "metro",
