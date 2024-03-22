@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { StyleSheet } from "react-native";
+import { Alert, StyleSheet } from "react-native";
 import {
   Camera,
   useCameraDevice,
@@ -24,9 +24,13 @@ const ScannerCamera = () => {
     const scheduleLoop = () => {
       setTimeout(async () => {
         if (abortController.signal.aborted) return;
-        await takePhotoAndDetectObjects(ref.current!, setBoundingBox);
+        try {
+          await takePhotoAndDetectObjects(ref.current!, setBoundingBox);
 
-        scheduleLoop();
+          scheduleLoop();
+        } catch (ex) {
+          Alert.alert("Error", (ex as Error).message);
+        }
       }, 10);
     };
     scheduleLoop();
